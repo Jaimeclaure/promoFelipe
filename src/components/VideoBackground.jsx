@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
+import posterImage from '../assets/cargando.png'; 
 // Recibe la URL del video como una propiedad (prop)
-const VideoBackground = ({ videoUrl }) => {
+const VideoBackground = ({ videoUrl, isMuted }) => {
+  const videoRef = useRef(null);
+
+
+// 3. Este efecto se ejecuta cada vez que el estado 'isMuted' cambia
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
   if (!videoUrl) {
-    return null; // No renderizar nada si no hay URL
+    return null;
   }
 
   return (
     <div className="video-background-container">
-      {/* La prop 'key' es un truco para que React re-monte el componente
-          cuando la URL cambia, forzando la carga del nuevo video. */}
-      <video key={videoUrl} autoPlay loop playsInline>
+    <video
+        // 4. Asignamos la referencia al elemento
+        ref={videoRef}
+        key={videoUrl}
+        autoPlay
+        loop
+        // El video siempre inicia silenciado por defecto para que funcione el autoplay
+        muted 
+        playsInline
+        poster={posterImage}
+      >
         <source src={videoUrl} type="video/mp4" />
         Tu navegador no soporta videos HTML5.
       </video>

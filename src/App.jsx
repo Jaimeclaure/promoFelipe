@@ -14,16 +14,22 @@ const videoList = [
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState('');
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * videoList.length);
     setCurrentVideo(videoList[randomIndex]);
   }, []);
 
+  const handleSoundToggle = () => {
+    setIsMuted(prevState => !prevState);
+  };
+
+
   return (
     <>
     <div className="video-overlay"></div>
-      <VideoBackground videoUrl={currentVideo} />
+      <VideoBackground videoUrl={currentVideo}isMuted={isMuted} />
 
       {/* Contenedor principal que abarca toda la pantalla y usará Grid para posicionar */}
       <div className="layout-container">
@@ -50,7 +56,11 @@ function App() {
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="https://www.whatsapp.com"><FaWhatsapp /></a>
           </div>
         </div>
-
+        
+        <div className="sound-toggle-button" onClick={handleSoundToggle}>
+          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          <span>{isMuted ? 'Activar Sonido' : 'Silenciar'}</span>
+        </div>
       </div>
     </>
   );
