@@ -3,19 +3,13 @@
 /* ================================================= */
 
 :root {
-    /* -- Paleta de Colores -- */
     --color-fondo: #1a1a1a;
     --color-primario: #279169;
     --color-secundario: #16a46b;
     --color-texto-principal: #ffffff;
     --color-texto-secundario: #cccccc;
-
-    /* -- Tipografía -- */
     --fuente-titulos: 'Bebas Neue', sans-serif;
     --fuente-cuerpo: 'Montserrat', sans-serif;
-
-    /* -- Efecto de superposición del video -- */
-    /* ✅ CORRECCIÓN: Se cambió el valor a 'transparent' para eliminar la capa oscura */
     --video-overlay: transparent;
 }
 
@@ -99,15 +93,13 @@ body {
 }
 
 .section-top-right {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-area: 1 / 2 / 2 / 3;
     justify-content: flex-end;
     align-items: flex-start;
 }
 
 .section-bottom-left {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-area: 2 / 1 / 3 / 2;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
@@ -117,8 +109,7 @@ body {
 }
 
 .section-bottom-right {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-area: 2 / 2 / 3 / 3;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -178,7 +169,6 @@ body {
     text-shadow: 0 0 15px var(--color-primario);
 }
 
-
 /* ================================================= */
 /* ESTILOS DEL BOTÓN DE SONIDO                      */
 /* ================================================= */
@@ -208,21 +198,8 @@ body {
     transform: scale(1.05);
 }
 
-/* En móvil, lo movemos para que no estorbe */
-@media (max-width: 768px) {
-    .sound-toggle-button {
-        top: auto;
-        bottom: 2rem;
-        left: 2rem;
-    }
-}
-
-
-
-
-
 /* ================================================= */
-/* RESPONSIVE: AJUSTES PARA MÓVILES (CORREGIDO)     */
+/* RESPONSIVE: AJUSTES PARA MÓVILES                 */
 /* ================================================= */
 
 @media (max-width: 768px) {
@@ -233,35 +210,27 @@ body {
         gap: 1rem;
     }
 
-    /* --- SECCIÓN DEL LOGO --- */
     .section-top-right {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        justify-content: flex-end;
-        align-items: flex-start;
+        grid-area: 1 / 1 / 2 / 2;
     }
 
-    /* --- SECCIÓN DE TEXTOS --- */
     .section-bottom-left {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        /* ✅ CORRECCIÓN: Se cambió a 'flex-end' para alinear los textos en la parte inferior */
+        grid-area: 2 / 1 / 3 / 2;
         justify-content: flex-end;
-        align-items: flex-start;
-        text-align: left;
         margin: 0;
         max-width: 100%;
     }
 
-    /* --- SECCIÓN DE ÍCONOS --- */
     .section-bottom-right {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
-        justify-content: flex-end;
-        align-items: flex-end;
+        grid-area: 3 / 1 / 4 / 2;
     }
 
-    /* --- AJUSTES DE FUENTES Y TAMAÑOS --- */
+    .sound-toggle-button {
+        top: auto;
+        bottom: 2rem;
+        left: 2rem;
+    }
+
     .logo-promo {
         width: 90px;
     }
