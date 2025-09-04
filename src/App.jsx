@@ -7,10 +7,11 @@ import logo from './assets/promo2000-logo.png';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 const videoList = [
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756934615/zack_snyder_continuidad_chvhdq.mp4',
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756934611/perrita_lleva_a_su_cachorro_phvsqz.mp4',
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756934611/gato_cam1_kaweyb.mp4',
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756934610/video_2024-09-01_00-53-37_jtycbz.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958826/promo1_kjd212.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958792/promo2_l60cn2.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958783/promo4_rqnriw.mp4',
 ];
 
 function App() {
@@ -37,18 +38,22 @@ function App() {
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
 
+        {/* ✅ CORRECCIÓN AQUÍ */}
         <div className="section section-bottom-left">
-          <h1 className="main-title">Promo 2000</h1>
-          <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
-          <p className="description-left-justified">
-            Recordando los mejores momentos. Un reencuentro para celebrar más de dos décadas de amistad e historias inolvidables.
-          </p>
+          {/* Ahora los textos están DENTRO del contenedor */}
+          <div className="text-container">
+            <h1 className="main-title">Promo 2000</h1>
+            <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
+            <p className="description-left-justified">
+              Recordando los mejores momentos. Un reencuentro para celebrar más de dos décadas de amistad e historias inolvidables.
+            </p>
+          </div>
         </div>
 
         <div className="section section-bottom-right">
           <div className="social-icons">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
+            <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
             {/* ✅ CORRECCIÓN 3: Corregido el enlace de WhatsApp */}
             <a href="https://wa.me/+59167806989" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
