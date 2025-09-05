@@ -33,40 +33,38 @@ function App() {
       {/* Se añade un espacio entre las props para mayor claridad */}
       <VideoBackground videoUrl={currentVideo} isMuted={isMuted} />
 
-    <div className="layout-container">
+        <div className="layout-container">
         <div className="section section-top-right">
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
 
-        {/* ✅ CORRECCIÓN AQUÍ */}
-        <div className="section section-bottom-left">
-          {/* 1. Se mueve el botón aquí, antes del contenedor de texto */}
-          <div className="sound-toggle-button" onClick={handleSoundToggle}>
-            {/* 2. Se elimina el texto (el span) */}
-            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+        {/* ✅ NUEVO WRAPPER para el contenido inferior */}
+        <div className="bottom-content-wrapper">
+          {/* Antiguo .section-bottom-left */}
+          <div className="section section-bottom-left">
+            <div className="sound-toggle-button" onClick={handleSoundToggle}>
+              {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+            </div>
+            <div className="text-container">
+              <h1 className="main-title">Promo 2000</h1>
+              <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
+              <p className="description-left-justified">
+                Recordando los mejores momentos. Un reencuentro para celebrar más de dos décadas de amistad e historias inolvidables.
+              </p>
+            </div>
           </div>
 
-          <div className="text-container">
-            <h1 className="main-title">Promo 2000</h1>
-            <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
-            <p className="description-left-justified">
-              Recordando los mejores momentos. Un reencuentro para celebrar más de dos décadas de amistad e historias inolvidables.
-            </p>
+          {/* Antiguo .section-bottom-right */}
+          <div className="section section-bottom-right">
+            <div className="social-icons">
+              <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
+              <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://wa.me/+59167806989?text=me%20gusta%20tu%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            </div>
           </div>
-        </div>
+        </div> {/* Cierre de .bottom-content-wrapper */}
 
-        <div className="section section-bottom-right">
-          <div className="social-icons">
-            <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-            <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            {/* ✅ CORRECCIÓN 3: Corregido el enlace de WhatsApp */}
-            <a href="https://wa.me/+59167806989" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
-          </div>
-        </div>
-      </div>
-
-      {/* ✅ CORRECCIÓN 2: Se mueve el botón fuera del layout-container para un posicionamiento absoluto más fiable */}
-      
+      </div> {/* Cierre de .layout-container */}
     </>
   );
 }

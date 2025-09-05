@@ -79,36 +79,54 @@ body {
 }
 
 /* ================================================= */
-/* LAYOUT PARA LAS ESQUINAS (ESCRITORIO)    */
+/* LAYOUT PARA LAS ESQUINAS (ESCRITORIO)            */
 /* ================================================= */
 
 .section {
-    position: absolute;
     pointer-events: all;
     animation: fadeIn 1.5s ease-out forwards;
 }
 
+.bottom-content-wrapper {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+    max-height: calc(100% - 6rem);
+    box-sizing: border-box;
+}
+
 .section-top-right {
+    position: absolute;
     top: 3rem;
     right: 3rem;
+    pointer-events: all;
 }
 
 .section-bottom-left {
-    bottom: 3rem;
-    left: 3rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    pointer-events: all;
+    margin-right: 1.5rem;
+    flex-shrink: 1;
 }
 
 .section-bottom-right {
-    bottom: 3rem;
-    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    pointer-events: all;
+    flex-shrink: 0;
 }
 
 .text-container {
     background-color: rgba(10, 25, 20, 0.2);
-    /* ✅ AJUSTE 1: Reducido el padding del cuadro */
     padding: 1.5rem;
     border-radius: 16px;
     backdrop-filter: blur(10px);
@@ -123,7 +141,7 @@ body {
 }
 
 /* ================================================= */
-/* ESTILOS UNIFICADOS PARA BOTÓN DE SONIDO       */
+/* ESTILOS UNIFICADOS PARA BOTÓN DE SONIDO           */
 /* ================================================= */
 
 .sound-toggle-button {
@@ -159,7 +177,6 @@ body {
 
 .main-title {
     font-family: var(--fuente-titulos);
-    /* ✅ AJUSTE 2: Reducido el tamaño del título principal */
     font-size: 3.8rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -208,7 +225,7 @@ body {
 
 
 /* ================================================= */
-/* RESPONSIVE: AJUSTES SIMPLIFICADOS             */
+/* RESPONSIVE: AJUSTES SIMPLIFICADOS                */
 /* ================================================= */
 
 @media (max-width: 768px) {
@@ -217,35 +234,41 @@ body {
         right: 1.5rem;
     }
 
-    .section-bottom-left {
+    .bottom-content-wrapper {
         bottom: 1.5rem;
         left: 1.5rem;
+        right: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
 
-    .section-bottom-right {
-        bottom: 1.5rem;
-        right: 1.5rem;
-    }
+    /* ✅ CORRECCIÓN: Se eliminaron las reglas conflictivas para .section-bottom-left y .section-bottom-right */
 
     .logo-promo {
         width: 80px;
     }
 
     .text-container {
-        padding: 1.8rem;
+        padding: 1.2rem;
+        max-width: 100%;
     }
 
-    /* También reducimos un poco el padding en móvil */
     .main-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
-    /* Y el título en móvil */
     .sub-title-small {
         font-size: 1rem;
     }
 
     .description-left-justified {
         font-size: 0.9rem;
+    }
+
+    .section-bottom-right {
+        align-items: flex-start;
+        margin-top: 0;
+        /* Ajustamos el margen para que el 'gap' del wrapper lo controle */
     }
 }
