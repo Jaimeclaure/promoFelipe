@@ -33,14 +33,19 @@ function App() {
       {/* Se añade un espacio entre las props para mayor claridad */}
       <VideoBackground videoUrl={currentVideo} isMuted={isMuted} />
 
-      <div className="layout-container">
+    <div className="layout-container">
         <div className="section section-top-right">
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
 
         {/* ✅ CORRECCIÓN AQUÍ */}
         <div className="section section-bottom-left">
-          {/* Ahora los textos están DENTRO del contenedor */}
+          {/* 1. Se mueve el botón aquí, antes del contenedor de texto */}
+          <div className="sound-toggle-button" onClick={handleSoundToggle}>
+            {/* 2. Se elimina el texto (el span) */}
+            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          </div>
+
           <div className="text-container">
             <h1 className="main-title">Promo 2000</h1>
             <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
@@ -61,10 +66,7 @@ function App() {
       </div>
 
       {/* ✅ CORRECCIÓN 2: Se mueve el botón fuera del layout-container para un posicionamiento absoluto más fiable */}
-      <div className="sound-toggle-button" onClick={handleSoundToggle}>
-        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-        <span>{isMuted ? 'Activar Sonido' : 'Silenciar'}</span>
-      </div>
+      
     </>
   );
 }
