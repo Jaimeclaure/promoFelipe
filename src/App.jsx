@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import VideoBackground from './components/VideoBackground';
 import logo from './assets/promo2000-logo.png';
-// ✅ CORRECCIÓN 1: Importar los íconos de volumen que faltaban
 import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 const videoList = [
@@ -30,17 +29,25 @@ function App() {
   return (
     <>
       <div className="video-overlay"></div>
-      {/* Se añade un espacio entre las props para mayor claridad */}
       <VideoBackground videoUrl={currentVideo} isMuted={isMuted} />
 
-        <div className="layout-container">
+      <div className="layout-container">
+        {/* --- CONTENIDO SUPERIOR --- */}
         <div className="section section-top-right">
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
 
-        {/* ✅ NUEVO WRAPPER para el contenido inferior */}
+        {/* ✅ CORRECCIÓN 1: Usamos la clase correcta y la estructura correcta para los iconos */}
+        <div className="section section-top-left-social">
+          <div className="social-icons">
+            <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
+            <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://wa.me/+59167806989?text=me%20gusta%20tu%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+          </div>
+        </div>
+
+        {/* --- CONTENIDO INFERIOR --- */}
         <div className="bottom-content-wrapper">
-          {/* Antiguo .section-bottom-left */}
           <div className="section section-bottom-left">
             <div className="sound-toggle-button" onClick={handleSoundToggle}>
               {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
@@ -53,18 +60,9 @@ function App() {
               </p>
             </div>
           </div>
+        </div> 
 
-          {/* Antiguo .section-bottom-right */}
-          <div className="section section-bottom-right">
-            <div className="social-icons">
-              <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-              <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-              <a href="https://wa.me/+59167806989?text=me%20gusta%20tu%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
-            </div>
-          </div>
-        </div> {/* Cierre de .bottom-content-wrapper */}
-
-      </div> {/* Cierre de .layout-container */}
+      </div>
     </>
   );
 }

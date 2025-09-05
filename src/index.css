@@ -83,8 +83,17 @@ body {
 /* ================================================= */
 
 .section {
+    position: absolute;
     pointer-events: all;
     animation: fadeIn 1.5s ease-out forwards;
+}
+
+.section-top-left-social {
+    top: 3rem;
+    left: 3rem;
+    /* Usamos flex para distribuir los íconos horizontalmente */
+    display: flex;
+    align-items: flex-start;
 }
 
 .bottom-content-wrapper {
@@ -92,38 +101,33 @@ body {
     bottom: 3rem;
     left: 3rem;
     right: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    
     pointer-events: none;
     max-height: calc(100% - 6rem);
     box-sizing: border-box;
+        /* ✅ Ajustamos a flex-start para alinear a la izquierda */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 .section-top-right {
-    position: absolute;
+    
     top: 3rem;
     right: 3rem;
     pointer-events: all;
 }
 
 .section-bottom-left {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     pointer-events: all;
-    margin-right: 1.5rem;
+    /* margin-right ya no es necesario aquí */
     flex-shrink: 1;
 }
 
-.section-bottom-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    pointer-events: all;
-    flex-shrink: 0;
-}
 
 .text-container {
     background-color: rgba(10, 25, 20, 0.2);
@@ -133,7 +137,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
-    max-width: 500px;
+   
 }
 
 .text-container:hover {
@@ -177,7 +181,7 @@ body {
 
 .main-title {
     font-family: var(--fuente-titulos);
-    font-size: 3.8rem;
+    font-size: 2.7rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0;
@@ -234,6 +238,13 @@ body {
         right: 1.5rem;
     }
 
+    .section-top-left-social {
+    /* ✅ AJUSTE RESPONSIVE para los iconos */
+    top: 1.5rem;
+    left: 1.5rem;
+    /* Los íconos se muestran en fila en móvil también */
+}
+
     .bottom-content-wrapper {
         bottom: 1.5rem;
         left: 1.5rem;
@@ -243,7 +254,7 @@ body {
         gap: 1.5rem;
     }
 
-    /* ✅ CORRECCIÓN: Se eliminaron las reglas conflictivas para .section-bottom-left y .section-bottom-right */
+    
 
     .logo-promo {
         width: 80px;
@@ -255,7 +266,7 @@ body {
     }
 
     .main-title {
-        font-size: 2.5rem;
+        font-size: 2.9rem;
     }
 
     .sub-title-small {
@@ -266,9 +277,5 @@ body {
         font-size: 0.9rem;
     }
 
-    .section-bottom-right {
-        align-items: flex-start;
-        margin-top: 0;
-        /* Ajustamos el margen para que el 'gap' del wrapper lo controle */
-    }
+    
 }
