@@ -11,6 +11,8 @@ const videoList = [
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958792/promo2_l60cn2.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958783/promo4_rqnriw.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757107659/Chino_style_amdbde.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757284006/VID-20250907-WA0018_wtw9kk.mp4',
 ];
 
 function App() {
