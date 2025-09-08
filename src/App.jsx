@@ -7,12 +7,16 @@ import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp } from 'r
 
 const videoList = [
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4',
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958826/promo1_kjd212.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958792/promo2_l60cn2.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958783/promo4_rqnriw.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757107659/Chino_style_amdbde.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757284006/VID-20250907-WA0018_wtw9kk.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352513/felixgutierrez_hmpzdd.mp4',
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4',
+
+
 ];
 
 function App() {
