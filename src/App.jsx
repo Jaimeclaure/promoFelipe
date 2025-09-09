@@ -1,12 +1,11 @@
 // src/App.jsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import VideoBackground from './components/VideoBackground';
 import logo from './assets/promo2000-logo.png';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 const videoList = [
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958792/promo2_l60cn2.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958783/promo4_rqnriw.mp4',
@@ -17,18 +16,35 @@ const videoList = [
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757368393/juanpabloveizaga_ocei8d.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757377883/salmatorrez_ay32j9.mp4',
-
-
+    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4',
 ];
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState('');
   const [isMuted, setIsMuted] = useState(true);
 
+  // Esta función es para CUANDO UN VIDEO TERMINA.
+  // Sigue siendo correcta y necesaria.
+  const selectNextVideo = useCallback(() => {
+    if (videoList.length <= 1) {
+      setCurrentVideo(videoList[0] || '');
+      return;
+    }
+    let nextVideo;
+    do {
+      const randomIndex = Math.floor(Math.random() * videoList.length);
+      nextVideo = videoList[randomIndex];
+    } while (nextVideo === currentVideo);
+    
+    setCurrentVideo(nextVideo);
+  }, [currentVideo]);
+
+  // ✅ CORRECCIÓN: Este useEffect es SOLO para el video inicial.
   useEffect(() => {
+    // Lógica simple para el primer video, sin llamar a la función de useCallback.
     const randomIndex = Math.floor(Math.random() * videoList.length);
     setCurrentVideo(videoList[randomIndex]);
-  }, []);
+  }, []); // El array vacío es ahora 100% correcto y no dará advertencias.
 
   const handleSoundToggle = () => {
     setIsMuted(prevState => !prevState);
@@ -37,15 +53,17 @@ function App() {
   return (
     <>
       <div className="video-overlay"></div>
-      <VideoBackground videoUrl={currentVideo} isMuted={isMuted} />
+      <VideoBackground 
+        videoUrl={currentVideo} 
+        isMuted={isMuted}
+        onVideoEnd={selectNextVideo}
+      />
 
       <div className="layout-container">
-        {/* --- CONTENIDO SUPERIOR --- */}
         <div className="section section-top-right">
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
 
-        {/* ✅ CORRECCIÓN 1: Usamos la clase correcta y la estructura correcta para los iconos */}
         <div className="section section-top-left-social">
           <div className="social-icons">
             <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
@@ -54,7 +72,6 @@ function App() {
           </div>
         </div>
 
-        {/* --- CONTENIDO INFERIOR --- */}
         <div className="bottom-content-wrapper">
           <div className="section section-bottom-left">
             <div className="sound-toggle-button" onClick={handleSoundToggle}>
@@ -69,7 +86,6 @@ function App() {
             </div>
           </div>
         </div> 
-
       </div>
     </>
   );
