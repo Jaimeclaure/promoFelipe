@@ -136,11 +136,25 @@ body {
 }
 
 /* ================================================= */
-/* ESTILOS UNIFICADOS PARA BOTÓN DE SONIDO           */
+/* ✅ NUEVOS ESTILOS: Controles de video (grupo de botones) */
 /* ================================================= */
-
-.sound-toggle-button {
+.video-controls {
+    display: flex;
+    /* Para que los botones se alineen horizontalmente */
+    gap: 10px;
+    /* Espacio entre los botones */
+    margin-bottom: 10px;
+    /* Mismo margen que tenía el botón de sonido solo */
     pointer-events: all;
+    /* Aseguramos que se puedan clickear */
+}
+
+/* ================================================= */
+/* ESTILOS UNIFICADOS PARA BOTONES DE CONTROL        */
+/* ================================================= */
+.sound-toggle-button,
+.control-button {
+    /* Aplicamos estilos base a ambos tipos de botones */
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -153,14 +167,24 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    margin-bottom: 10px;
+    padding: 0;
+    /* Aseguramos que no haya padding extra */
 }
 
-.sound-toggle-button:hover {
+.sound-toggle-button:hover,
+.control-button:hover {
     background-color: var(--color-primario);
     border-color: var(--color-primario);
     transform: scale(1.1);
 }
+
+.control-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
 
 /* ================================================= */
 /* ESTILOS DE ELEMENTOS (TEXTOS, LOGO, ICONOS)      */
@@ -238,8 +262,6 @@ body {
         bottom: 1.5rem;
         left: 1.5rem;
         right: 1.5rem;
-        /* Hacemos que ocupe todo el ancho menos los márgenes */
-        /* ✅ CORRECCIÓN: Aseguramos que el contenido se alinee abajo */
         justify-content: flex-end;
     }
 

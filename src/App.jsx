@@ -3,12 +3,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import VideoBackground from './components/VideoBackground';
 import logo from './assets/promo2000-logo.png';
-import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
+// ✅ NUEVOS ICONOS: FaForward y FaBackward
+import { FaFacebook, FaInstagram, FaWhatsapp, FaVolumeMute, FaVolumeUp, FaForward, FaBackward } from 'react-icons/fa';
 
 const videoList = [
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4',
-    'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958783/promo4_rqnriw.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757107659/Chino_style_amdbde.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757284006/VID-20250907-WA0018_wtw9kk.mp4',
     'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4',
@@ -26,29 +26,62 @@ const videoList = [
 function App() {
   const [currentVideo, setCurrentVideo] = useState('');
   const [isMuted, setIsMuted] = useState(true);
+  // ✅ NUEVO ESTADO: Para mantener un historial de videos vistos
+  const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
 
-  // Esta función es para CUANDO UN VIDEO TERMINA.
-  // Sigue siendo correcta y necesaria.
+  // ✅ MODIFICACIÓN: selectNextVideo ahora puede ir hacia adelante o elegir aleatorio
   const selectNextVideo = useCallback(() => {
-    if (videoList.length <= 1) {
-      setCurrentVideo(videoList[0] || '');
+    if (videoList.length === 0) {
+      setCurrentVideo('');
+      setHistory([]);
+      setHistoryIndex(-1);
       return;
     }
-    let nextVideo;
-    do {
-      const randomIndex = Math.floor(Math.random() * videoList.length);
-      nextVideo = videoList[randomIndex];
-    } while (nextVideo === currentVideo);
-    
-    setCurrentVideo(nextVideo);
-  }, [currentVideo]);
 
-  // ✅ CORRECCIÓN: Este useEffect es SOLO para el video inicial.
+    let nextVideo;
+    if (historyIndex < history.length - 1) {
+      // Si hay videos en el historial hacia adelante, los usamos
+      nextVideo = history[historyIndex + 1];
+    } else {
+      // Si no, elegimos un nuevo video aleatorio que no sea el actual
+      do {
+        const randomIndex = Math.floor(Math.random() * videoList.length);
+        nextVideo = videoList[randomIndex];
+      } while (nextVideo === currentVideo && videoList.length > 1);
+    }
+
+    setCurrentVideo(nextVideo);
+    // ✅ Actualizamos el historial
+    setHistory(prevHistory => {
+        const newHistory = prevHistory.slice(0, historyIndex + 1); // Cortamos si retrocedimos
+        return [...newHistory, nextVideo];
+    });
+    setHistoryIndex(prevIndex => prevIndex + 1);
+
+  }, [currentVideo, history, historyIndex]);
+
+
+  // ✅ NUEVA FUNCIÓN: Para ir al video anterior
+  const selectPreviousVideo = useCallback(() => {
+    if (historyIndex > 0) {
+      const prevVideo = history[historyIndex - 1];
+      setCurrentVideo(prevVideo);
+      setHistoryIndex(prevIndex => prevIndex - 1);
+    }
+  }, [history, historyIndex]);
+
+
+  // Al cargar la página por primera vez, seleccionamos el video inicial.
   useEffect(() => {
-    // Lógica simple para el primer video, sin llamar a la función de useCallback.
-    const randomIndex = Math.floor(Math.random() * videoList.length);
-    setCurrentVideo(videoList[randomIndex]);
-  }, []); // El array vacío es ahora 100% correcto y no dará advertencias.
+    if (videoList.length > 0) {
+      const randomIndex = Math.floor(Math.random() * videoList.length);
+      const initialVideo = videoList[randomIndex];
+      setCurrentVideo(initialVideo);
+      setHistory([initialVideo]);
+      setHistoryIndex(0);
+    }
+  }, []); // Se ejecuta solo una vez al inicio.
 
   const handleSoundToggle = () => {
     setIsMuted(prevState => !prevState);
@@ -60,7 +93,7 @@ function App() {
       <VideoBackground 
         videoUrl={currentVideo} 
         isMuted={isMuted}
-        onVideoEnd={selectNextVideo}
+        onVideoEnd={selectNextVideo} // onVideoEnd siempre avanza
       />
 
       <div className="layout-container">
@@ -78,9 +111,28 @@ function App() {
 
         <div className="bottom-content-wrapper">
           <div className="section section-bottom-left">
-            <div className="sound-toggle-button" onClick={handleSoundToggle}>
-              {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+            {/* ✅ NUEVO WRAPPER para los botones de control */}
+            <div className="video-controls">
+                <button
+                    className="control-button"
+                    onClick={selectPreviousVideo}
+                    disabled={historyIndex <= 0} // Deshabilitar si no hay historial previo
+                    aria-label="Video anterior"
+                >
+                    <FaBackward />
+                </button>
+                <div className="sound-toggle-button" onClick={handleSoundToggle} aria-label="Alternar sonido">
+                    {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                </div>
+                <button
+                    className="control-button"
+                    onClick={selectNextVideo}
+                    aria-label="Siguiente video"
+                >
+                    <FaForward />
+                </button>
             </div>
+            
             <div className="text-container">
               <h1 className="main-title">Promo 2000</h1>
               <p className="sub-title-small">Colegio Hno. Felipe Palazón</p>
