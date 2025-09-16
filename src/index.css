@@ -130,7 +130,7 @@ body {
 
 .bottom-ui-container {
     position: absolute;
-    bottom: 2rem;
+    bottom: 3.5rem;
     left: 2rem;
     right: 2rem;
     display: flex;
@@ -222,11 +222,11 @@ body {
     flex-shrink: 0;
     /* En lugar de un ancho fijo, usamos uno flexible con un máximo */
     width: 30%;
-    max-width: 280px;
+    max-width: 180px;
     /* Un máximo para pantallas grandes */
-    min-width: 220px;
+    min-width: 120px;
     /* Un mínimo para que no se aplaste demasiado */
-    padding: 2rem 1rem 2rem 2rem;
+    padding: 2rem 1rem 2rem 1rem;
     /* Reducimos el padding izquierdo */
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.2);
@@ -271,12 +271,12 @@ body {
 
 .video-wall-3d {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(2,1fr);
     /* Miniaturas un poco más pequeñas */
-    gap: 1.5rem;
+    gap: 1rem;
     width: 95%;
     /* Ocupa más espacio disponible */
-    padding: 2rem 1rem;
+    padding: 1rem;
     /* Padding ajustado */
     transform-style: preserve-3d;
     transform: rotateX(20deg);
