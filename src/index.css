@@ -128,9 +128,10 @@ body {
     color: var(--color-primario);
 }
 
+/* posicion de la barra de reproduccion */
 .bottom-ui-container {
     position: absolute;
-    bottom: 3.5rem;
+    bottom: 4rem;
     left: 2rem;
     right: 2rem;
     display: flex;
@@ -226,7 +227,7 @@ body {
     /* Un máximo para pantallas grandes */
     min-width: 120px;
     /* Un mínimo para que no se aplaste demasiado */
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 0.5rem;
     /* Reducimos el padding izquierdo */
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.2);
