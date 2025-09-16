@@ -217,10 +217,17 @@ body {
     cursor: pointer;
 }
 
+/* ✅ CORRECCIÓN: Ajuste de ancho y márgenes para la lista de nombres */
 .name-list-container {
     flex-shrink: 0;
-    width: 300px;
-    padding: 2rem;
+    /* En lugar de un ancho fijo, usamos uno flexible con un máximo */
+    width: 30%;
+    max-width: 280px;
+    /* Un máximo para pantallas grandes */
+    min-width: 220px;
+    /* Un mínimo para que no se aplaste demasiado */
+    padding: 2rem 1rem 2rem 2rem;
+    /* Reducimos el padding izquierdo */
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.2);
     overflow-y: auto;
@@ -228,6 +235,8 @@ body {
 
 .name-list-container h2 {
     font-family: var(--fuente-titulos);
+    padding-left: 0.8rem;
+    /* Alineamos el título con los ítems */
 }
 
 .name-list-container ul {
@@ -262,10 +271,13 @@ body {
 
 .video-wall-3d {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* Miniaturas un poco más pequeñas */
     gap: 1.5rem;
-    width: 90%;
-    padding: 2rem 0;
+    width: 95%;
+    /* Ocupa más espacio disponible */
+    padding: 2rem 1rem;
+    /* Padding ajustado */
     transform-style: preserve-3d;
     transform: rotateX(20deg);
     max-height: 100%;
