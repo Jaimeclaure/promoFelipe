@@ -1,21 +1,19 @@
-// src/components/VideoBackground.jsx
-import React, { useState, useRef, useEffect } from 'react';
-import VideoLoader from './layout/VideoLoader';
+import React, { useRef, useEffect, useState } from 'react';
+import VideoLoader from './VideoLoader';
+import AudioVisualizer from '../visualization/AudioVisualizer';
 
-// ✅ PASO 1: El componente ahora recibe la nueva prop 'onVideoEnd'
-const VideoBackground = ({ videoUrl, isMuted, onVideoEnd }) => {
+const MainVideoPlayer = ({ videoUrl, isMuted, onVideoEnd, isPlaying }) => {
   const videoRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const videoNode = videoRef.current;
-    if (!videoNode) return;
-    
-    // Reiniciamos el estado de carga y progreso cada vez que cambia el video
+    if (!videoNode || !videoUrl) return;
+
     setIsLoading(true);
     setProgress(0);
-
+    
     const handleProgress = () => {
       if (videoNode.duration > 0) {
         const bufferedEnd = videoNode.buffered.length > 0 ? videoNode.buffered.end(0) : 0;
@@ -23,25 +21,39 @@ const VideoBackground = ({ videoUrl, isMuted, onVideoEnd }) => {
         setProgress(percent);
       }
     };
-
-    const handleCanPlay = () => {
-      setIsLoading(false);
-    };
-
+    const handleCanPlay = () => setIsLoading(false);
+    
     videoNode.addEventListener('progress', handleProgress);
     videoNode.addEventListener('canplay', handleCanPlay);
+    videoNode.load();
 
     return () => {
       videoNode.removeEventListener('progress', handleProgress);
       videoNode.removeEventListener('canplay', handleCanPlay);
     };
   }, [videoUrl]);
-
+  
+  // Este useEffect se mantiene para controlar el sonido
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = isMuted;
     }
   }, [isMuted]);
+
+  // Este useEffect se mantiene para pausar/reanudar
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        // Le pedimos al video que intente reproducirse
+        videoRef.current.play().catch(error => {
+          // A veces los navegadores bloquean la reproducción, esto evita un error en la consola
+          console.log("El navegador impidió la reproducción automática:", error);
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlaying, videoUrl]); // Añadimos videoUrl para que se ejecute al cambiar de video
 
   if (!videoUrl) {
     return null;
@@ -54,20 +66,19 @@ const VideoBackground = ({ videoUrl, isMuted, onVideoEnd }) => {
         <video
           ref={videoRef}
           key={videoUrl}
-          autoPlay
-          // ✅ PASO 2: Eliminamos el atributo 'loop'
-          // loop 
-          muted
+          // ✅ CORRECCIÓN: Se restaura el atributo autoPlay
+          autoPlay 
+          muted={isMuted}
           playsInline
-          // ✅ PASO 3: Añadimos el evento onEnded, que ejecuta la función del padre
           onEnded={onVideoEnd}
+          crossOrigin="anonymous"
         >
           <source src={videoUrl} type="video/mp4" />
-          Tu navegador no soporta videos HTML5.
         </video>
+        {!isMuted && <AudioVisualizer videoRef={videoRef} />}
       </div>
     </>
   );
 };
 
-export default VideoBackground;
+export default MainVideoPlayer;

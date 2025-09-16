@@ -1,26 +1,20 @@
 /* ================================================= */
-/* 🎨 ZONA DE PERSONALIZACIÓN 🎨                   */
+/* 🎨 VARIABLES Y ESTILOS GLOBALES                  */
 /* ================================================= */
-
 :root {
-    --color-fondo: #1a1a1a;
+    --color-fondo: #0a0a0a;
     --color-primario: #279169;
     --color-secundario: #16a46b;
     --color-texto-principal: #ffffff;
     --color-texto-secundario: #cccccc;
     --fuente-titulos: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Inter', sans-serif;
-    --video-overlay: transparent;
 }
-
-/* ================================================= */
-/* ESTILOS GENERALES Y DE FONDO                     */
-/* ================================================= */
 
 body {
     margin: 0;
-    font-family: var(--fuente-cuerpo);
     background-color: var(--color-fondo);
+    font-family: var(--fuente-cuerpo);
     color: var(--color-texto-principal);
     overflow: hidden;
 }
@@ -37,21 +31,30 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 /* ================================================= */
-/* ESTILOS DEL VIDEO Y LA INTERFAZ                  */
+/* REPRODUCTOR PRINCIPAL Y VISUALIZADOR             */
 /* ================================================= */
-
 .video-background-container {
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     display: flex;
@@ -64,101 +67,112 @@ body {
     object-fit: contain;
     width: 100%;
     height: 100%;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
 }
 
+.audio-visualizer-canvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* ================================================= */
+/* CAPA DE INTERFAZ (UI OVERLAY)                    */
+/* ================================================= */
 .layout-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
 }
-
-/* ================================================= */
-/* LAYOUT PARA LAS ESQUINAS (ESCRITORIO)            */
-/* ================================================= */
 
 .section {
     position: absolute;
     pointer-events: all;
-    animation: fadeIn 1.5s ease-out forwards;
-}
-
-.section-top-left-social {
-    top: 3rem;
-    left: 3rem;
-    display: flex;
-    align-items: flex-start;
+    animation: fadeIn 1.5s ease;
 }
 
 .section-top-right {
-    top: 3rem;
-    right: 3rem;
+    top: 2rem;
+    right: 2rem;
 }
 
-.bottom-content-wrapper {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    pointer-events: none;
-    max-height: calc(100% - 6rem);
-    box-sizing: border-box;
+.section-top-left-social {
+    top: 2rem;
+    left: 2rem;
+}
+
+.logo-promo {
+    width: 100px;
+}
+
+.social-icons {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    gap: 1rem;
 }
 
-.section-bottom-left {
-    max-width: 500px;
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-primario);
+}
+
+.bottom-ui-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    pointer-events: all;
-    flex-shrink: 1;
+    align-items: center;
+    gap: 1.5rem;
+    pointer-events: none;
 }
 
-.text-container {
-    background-color: rgba(10, 25, 20, 0.2);
-    padding: 1.5rem;
-    border-radius: 16px;
+.quote-container {
+    pointer-events: all;
+    background-color: rgba(10, 25, 20, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
 }
 
-.text-container:hover {
-    background-color: rgba(10, 25, 20, 0.4);
+.quote-container p {
+    margin: 0;
 }
 
-/* ================================================= */
-/* ✅ NUEVOS ESTILOS: Controles de video (grupo de botones) */
-/* ================================================= */
-.video-controls {
-    display: flex;
-    /* Para que los botones se alineen horizontalmente */
-    gap: 10px;
-    /* Espacio entre los botones */
-    margin-bottom: 10px;
-    /* Mismo margen que tenía el botón de sonido solo */
+.main-controls {
     pointer-events: all;
-    /* Aseguramos que se puedan clickear */
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(10, 25, 20, 0.3);
+    padding: 0.5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ================================================= */
-/* ESTILOS UNIFICADOS PARA BOTONES DE CONTROL        */
-/* ================================================= */
-.sound-toggle-button,
 .control-button {
-    /* Aplicamos estilos base a ambos tipos de botones */
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: none;
     color: white;
-    border: 1px solid var(--color-secundario);
+    border: none;
     transition: all 0.3s ease;
     width: 44px;
     height: 44px;
@@ -166,123 +180,193 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0;
-    /* Aseguramos que no haya padding extra */
 }
 
-.sound-toggle-button:hover,
 .control-button:hover {
     background-color: var(--color-primario);
-    border-color: var(--color-primario);
     transform: scale(1.1);
 }
 
-.control-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-
 /* ================================================= */
-/* ESTILOS DE ELEMENTOS (TEXTOS, LOGO, ICONOS)      */
+/* VISTA DEL ANUARIO (YEARBOOK)                     */
 /* ================================================= */
-.logo-promo {
-    width: 130px;
-    filter: drop-shadow(0 0 8px var(--color-secundario));
-}
-
-.main-title {
-    font-family: var(--fuente-titulos);
-    font-size: 3.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0;
-    line-height: 1.1;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.sub-title-small {
-    font-family: var(--fuente-cuerpo);
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--color-secundario);
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.description-left-justified {
-    font-family: var(--fuente-cuerpo);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-texto-secundario);
-    margin-top: 0;
-    line-height: 1.6;
-    text-align: left;
-}
-
-.social-icons {
+.yearbook-view-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    z-index: 20;
     display: flex;
+    animation: fadeIn 0.5s ease;
+}
+
+.yearbook-close-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 22;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.name-list-container {
+    flex-shrink: 0;
+    width: 300px;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.name-list-container h2 {
+    font-family: var(--fuente-titulos);
+}
+
+.name-list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.name-list-container li {
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.name-list-container li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.name-list-container li.active {
+    background-color: var(--color-primario);
+    font-weight: bold;
+}
+
+.video-wall-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    overflow: hidden;
+}
+
+.video-wall-3d {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
+    width: 90%;
+    padding: 2rem 0;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg);
+    max-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.social-icons a {
-    color: var(--color-texto-principal);
-    font-size: 2rem;
-    transition: all 0.3s ease;
+.video-thumbnail {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.social-icons a:hover {
-    color: var(--color-primario);
-    transform: scale(1.2) rotate(-10deg);
-    text-shadow: 0 0 15px var(--color-primario);
+.video-thumbnail:hover {
+    transform: scale(1.05) translateZ(50px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
+.video-thumbnail video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-/* ================================================= */
-/* RESPONSIVE: AJUSTES SIMPLIFICADOS                */
-/* ================================================= */
+.thumbnail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
 
-@media (max-width: 768px) {
-    .section-top-right {
-        top: 1.5rem;
-        right: 1.5rem;
-    }
+.thumbnail-overlay p {
+    margin: 0;
+    font-weight: bold;
+}
 
-    .section-top-left-social {
-        top: 1.5rem;
-        left: 1.5rem;
-    }
+.profile-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
 
-    .bottom-content-wrapper {
-        bottom: 1.5rem;
-        left: 1.5rem;
-        right: 1.5rem;
-        justify-content: flex-end;
-    }
+.profile-card {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    overflow: hidden;
+    animation: slideUp 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .logo-promo {
-        width: 80px;
-    }
+.profile-card video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #000;
+}
 
-    .text-container {
-        padding: 1.2rem;
-        max-width: 100%;
-    }
+.profile-info {
+    padding: 1.5rem;
+}
 
-    .main-title {
-        font-size: 2.5rem;
-    }
+.profile-info h3 {
+    margin-top: 0;
+    font-family: var(--fuente-titulos);
+}
 
-    .sub-title-small {
-        font-size: 1rem;
-    }
+.profile-action {
+    position: absolute;
+    top: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
-    .description-left-justified {
-        font-size: 0.9rem;
-    }
+.profile-action.close {
+    right: 1rem;
+}
+
+.profile-action.expand {
+    right: 4rem;
 }
