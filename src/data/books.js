@@ -101,7 +101,7 @@ export const bookList =
             "title": "Ficciones Selectas",
             "author": "Jorge Luis Borges",
             "publisher": "Gabriela Moscoso S.A.",
-            "coverUrl": "https://i.imgur.com/4g0wE4B.png",
+            "coverUrl": "https://encantalibros.com/wp-content/uploads/2020/12/9789875666474.jpg",
             "description": "Una antología de los relatos más intrigantes de la literatura."
         },
         {
@@ -261,7 +261,7 @@ export const bookList =
             "title": "La poesía infantil y juvenil",
             "author": "Oscar Alfaro",
             "publisher": "Codetar - Unicef",
-            "coverUrl": "https://i.imgur.com/84iZqgA.png",
+            "coverUrl": "https://latintainvisible.wordpress.com/wp-content/uploads/2013/05/coleccc3b3n-alfaro.jpg",
             "description": "Una colección de poemas dirigidos a niños y jóvenes."
         },
         {
@@ -341,7 +341,7 @@ export const bookList =
             "title": "Hola Caos",
             "author": "Florencia Squillacioti Schuab",
             "publisher": "La hoguera",
-            "coverUrl": "https://www.lahoguera.com/wp-content/uploads/2021/11/Hola-caos-web.jpg",
+            "coverUrl": "https://books.google.com.bo/googlebooks/images/no_cover_thumb.gif",
             "description": "Una exploración de la vida moderna y sus desafíos."
         },
         {
@@ -365,7 +365,7 @@ export const bookList =
             "title": "Rastros de ausencia",
             "author": "Marcelo Martínez Meneses",
             "publisher": "Santillana",
-            "coverUrl": "https://www.loqueleo.com/bo/uploads/2016/08/resized/800_9789997489746.jpg",
+            "coverUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1653074650i/61136122.jpg",
             "description": "Una narrativa que examina la pérdida y la memoria."
         },
         {
@@ -381,7 +381,7 @@ export const bookList =
             "title": "El océano interior",
             "author": "Juan José Cavero",
             "publisher": "Norma",
-            "coverUrl": "https://www.profitecnicas.com/imagenes_grandes/9789580/978958001034.GIF",
+            "coverUrl": "https://www.librerianorma.com/images/Caratula/Responsive/9789580010340.jpg",
             "description": "Una reflexión sobre la conexión entre el ser humano y el mar."
         },
         {
