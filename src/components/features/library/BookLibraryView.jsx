@@ -28,7 +28,7 @@ const BookLibraryView = ({ books, virtualLibraries, onSelectBook, onClose }) => 
       </div>
 
       <div className="library-header">
-        <h1>Biblioteca Física</h1>
+        <h3>Biblioteca Física</h3>
         <button className="library-close-button" onClick={onClose}><FaTimes /></button>
       </div>
 

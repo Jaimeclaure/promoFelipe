@@ -61,7 +61,7 @@ export const bookList =
             "title": "El mundo prehistórico",
             "author": "David John",
             "publisher": "Vidorama S.A",
-            "coverUrl": "https://i.imgur.com/37s3a1x.jpeg",
+            "coverUrl": "https://imagessl3.casadellibro.com/a/l/s7/63/9781409501763.webp",
             "description": "Explora las civilizaciones y la vida en la prehistoria."
         },
         {
@@ -85,7 +85,7 @@ export const bookList =
             "title": "Esquilo Tragedias",
             "author": "Esquilo",
             "publisher": "Lozada S.A.",
-            "coverUrl": "https://i.imgur.com/pB3J2kI.png",
+            "coverUrl": "https://imgs.search.brave.com/NU_QkOqXEfYh3mHHGI5o4SukeljR7gVV-JvWxgiMGiw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzc5MDA5Ny1NTE04/NDczNTQwMDc2Ml8w/NTIwMjUtVi1saWJy/by1vcmlnaW5hbC10/cmFnZWRpYXMtY29t/cGxldGFzLWVzcXVp/bG8ud2VicA",
             "description": "Una colección de las tragedias más impactantes de Esquilo."
         },
         {
@@ -93,7 +93,7 @@ export const bookList =
             "title": "Otra vuelta de tuerca",
             "author": "Henry James",
             "publisher": "Gabriela Moscoso S.A.",
-            "coverUrl": "https://tienda.sophosenlinea.com/imagenes_grandes/9788420/978842067429.GIF",
+            "coverUrl": "https://imgs.search.brave.com/0V3I9K8rhSPdjmmhlGY_X8e255r1I5kOnM4SarvSIyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzQxZFJZWWFEUmJM/LmpwZw",
             "description": "Una novela de suspense psicológico sobre el amor y la obsesión."
         },
         {
@@ -109,7 +109,7 @@ export const bookList =
             "title": "El corazón de las tinieblas",
             "author": "Joseph Conrad",
             "publisher": "Gabriela Moscoso S.A.",
-            "coverUrl": "https://www.unilibro.es/cover/libro/9788413622542.jpg",
+            "coverUrl": "https://imgs.search.brave.com/VntRh0TSZ6M7ydbrSg2HItfYPWmK4eFz0Tzmf4-pz58/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzkwMzk5Mi1NTEE0/NjQ5NTg0MjgwNl8w/NjIwMjEtVi53ZWJw",
             "description": "Una exploración de la oscuridad humana y la colonización."
         },
         {
@@ -117,7 +117,7 @@ export const bookList =
             "title": "Martin Fierro",
             "author": "José Hernández",
             "publisher": "Espasa - Calpe Argentina",
-            "coverUrl": "https://pictures.abebooks.com/isbn/9788423900219-es.jpg",
+            "coverUrl": "https://imgs.search.brave.com/CQHXB6cyr0m8zt1bqQh2cLy0S058Aedv3F2JfG15kno/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk3NDM3MS1NTFU3/MDYyNDA5MTc0OF8w/NzIwMjMtVi53ZWJw",
             "description": "El poema épico que narra la vida de un gaucho argentino."
         },
         {
@@ -157,7 +157,7 @@ export const bookList =
             "title": "La gramática estructural en la escuela secundaria",
             "author": "Mabel Manacorda de Rosetti",
             "publisher": "Kapelusz",
-            "coverUrl": "https://www.buscalibre.com.co/images/pi/20/37233360.jpg",
+            "coverUrl": "https://imgs.search.brave.com/brDlfBX-W7USoLbVg4vPr0rt4rOXegUKuxM07cCdjTg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzE1/MjgwNjgwNDIuanBn",
             "description": "Una guía sobre la gramática estructural destinada a estudiantes de secundaria."
         },
         {
@@ -213,7 +213,7 @@ export const bookList =
             "title": "Lengua Española",
             "author": "Varios Autores",
             "publisher": "Santillana",
-            "coverUrl": "https://www.loqueleo.com/us/uploads/2022/08/resized/800_9789580003397.jpg",
+            "coverUrl": "https://imgs.search.brave.com/YLlEK-vIR_-iZK8KCkRpDXLTUM1IrjRsZYwcthRYPPU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzIx/NzY3OTU2NDguanBn",
             "description": "Un recurso educativo para el aprendizaje de la lengua española."
         },
         {
@@ -237,7 +237,7 @@ export const bookList =
             "title": "Diccionario Anaya de la lengua",
             "author": "Varios Autores",
             "publisher": "Anaya S.A.",
-            "coverUrl": "https://pictures.abebooks.com/isbn/9788420735349-es.jpg",
+            "coverUrl": "https://imgs.search.brave.com/QEliwMe2cP6UOrXAkKu1kBLLpGP1J0luA5nkofN2YF8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzE1/MDE1NzQzNDQuanBn",
             "description": "Un diccionario completo de la lengua española, ideal para estudiantes."
         },
         {
@@ -245,7 +245,7 @@ export const bookList =
             "title": "Aeropuerto",
             "author": "Arthur Hailey",
             "publisher": "Emece Editores S.A.",
-            "coverUrl": "https://i.ebayimg.com/images/g/4yMAAOSw-g1lm~P5/s-l1600.jpg",
+            "coverUrl": "https://imgs.search.brave.com/ZeE5_ryyk2Nl_V_CIbC6EyRbf-UZ8Ik4XrEDv5DsHJI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF82/MDI1NDctTUxBNDQ0/ODU1MzM2OTBfMDEy/MDIxLU8ud2VicA",
             "description": "Una narrativa envolvente sobre las vidas entrelazadas en un aeropuerto."
         },
         {
@@ -301,7 +301,7 @@ export const bookList =
             "title": "Trágate ese sapo",
             "author": "Brian Tracy",
             "publisher": "Urano S.A.",
-            "coverUrl": "https://m.media-amazon.com/images/I/71-Qy-29H-L._SL1500_.jpg",
+            "coverUrl": "https://imgs.search.brave.com/rxrrD-ZOW4lZKvnwTjgyIaMgJWKhzgaYb_AiSeTr2NI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzYwNTk3NS1NTE04/MjMyMDE4MTM3NF8w/MjIwMjUtVi1saWJy/by10cmFnYXRlLWVz/ZS1zYXBvLWJyaWFu/LXRyYWN5LndlYnA",
             "description": "Técnicas para enfrentar situaciones difíciles con valentía."
         },
         {
@@ -309,7 +309,7 @@ export const bookList =
             "title": "Sobre rieles",
             "author": "Claudia Vaca",
             "publisher": "Santillana",
-            "coverUrl": "https://www.ablij.com/uploads/libros/2022-03/sobre-rieles.jpg",
+            "coverUrl": "https://imgs.search.brave.com/41zVf8KZ_JHXKIjj-zJmiliUcc_32mgCDVx4xZLqIyk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWJsaWouY29tL2Fi/bGlqL3N0b2NrL1Jl/dmlldy8xNDAtaW1h/Z2UvMTQwLWltYWdl/X3dlYi5qcGc_dj0y/MDg2NDY3Njk2P3Y9/N2Q2Y2ZjZDQ3Y2Iz/N2YyNGVhZjAxZGE0/MjczY2E4ZWE",
             "description": "Una narrativa que explora la vida en el contexto ferroviario."
         },
         {
@@ -317,7 +317,7 @@ export const bookList =
             "title": "Mitos y Recuerdos",
             "author": "Marcelo Birmajer",
             "publisher": "Santillana",
-            "coverUrl": "https://tienda.santillana.com.uy/es/products/schools/img/pic_big/MITOS%20Y%20RECUERDOA.jpg",
+            "coverUrl": "https://imgs.search.brave.com/r6IgCQgYk-Of7Xt1-9N2LeZOPv09wlRX7_cbBfEL0Qo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF83/MTE0MTQtTUxBNDU1/MDMwNTg4ODRfMDQy/MDIxLU8ud2VicA",
             "description": "Una colección de mitos y recuerdos que reflejan la cultura."
         },
         {
@@ -349,7 +349,7 @@ export const bookList =
             "title": "Sé amigo de ti mismo",
             "author": "Gregorio Iriarte",
             "publisher": "Kipus",
-            "coverUrl": "https://i.imgur.com/2sL7d3s.png",
+            "coverUrl": "https://libreriagisbert.com/wp-content/uploads/2014/09/51404040016.jpg",
             "description": "Consejos para mejorar la relación contigo mismo y con los demás."
         },
         {
@@ -357,7 +357,7 @@ export const bookList =
             "title": "La verdadera historia del ratón feroz",
             "author": "Graciela Montes",
             "publisher": "Santillana",
-            "coverUrl": "https://www.loqueleo.com/ar/uploads/2017/03/resized/800_9789504650584.jpg",
+            "coverUrl": "https://imgs.search.brave.com/RSEGejtNtAzrLy2QmRQFZyF6-1GE0FkDtw5oAeF4BMU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY3NDMwMi1NTEE1/MTk4NjYxMjYxMV8x/MDIwMjItVi53ZWJw",
             "description": "Una divertida historia que desafía los estereotipos de los cuentos."
         },
         {
@@ -389,7 +389,7 @@ export const bookList =
             "title": "Juana, la intrépida capitana",
             "author": "Adela Basch",
             "publisher": "Santillana",
-            "coverUrl": "https://www.loqueleo.com/ar/uploads/2016/02/resized/800_9789504645989.jpg",
+            "coverUrl": "https://imgs.search.brave.com/JlC5pc4wKSpxTkIwdhq4ubB5e0i0D0y_P6z--01pJJM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzczNDg4Ny1NTEE0/OTI1Njc0MDgzOV8w/MzIwMjItVi53ZWJw",
             "description": "Una historia inspiradora sobre valentía y liderazgo femenino."
         },
         {
@@ -413,15 +413,15 @@ export const bookList =
     "title": "Fábula verde",
     "author": "Joaquín Gutiérrez",
     "publisher": "Norma",
-    "coverUrl": "https://imagizer.imageshack.com/img923/6312/8B7h9o.jpg",
+      "coverUrl": "https://imgs.search.brave.com/BcmesA6ZFj1ba1DkVVosevJOMl03fbAjCBZKGYrixYU/rs:fit:860:0:0:0/g:ce/aHR0cDovL2VsZW1i/bG9iLmJsb2IuY29y/ZS53aW5kb3dzLm5l/dC9tZWRpYS9hdWIt/X2ZhYnVsYV92ZXJk/ZTYwMDA4ZjJhNWFm/OThfMzAwaC5qcGVn",
     "description": "Una fábula que enseña importantes lecciones sobre la naturaleza."
   },
   {
     "id": 53,
-    "title": "Un cuento que no se cuenta",
     "author": "Isabel Mesa",
+    "title": "El cuento que nunca se contó",
     "publisher": "Santillana",
-    "coverUrl": "https://imagizer.imageshack.com/img924/5195/g73hE8.jpg",
+      "coverUrl": "https://imgs.search.brave.com/-E7heukSkUj3xa9lhqYy4cHKCh5ze7ItHq9GekHRFH8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWJsaWouY29tL2Fi/bGlqL3N0b2NrL1Jl/dmlldy8xMTQtaW1h/Z2UvMTE0LWltYWdl/X3dlYi5qcGc_dj0y/MjY2NTg2OTE_dj1m/YjFiYWZkNDJiMmI1/YjBhNTQ3MTkxNTQx/NGMxNGM5Nwg",
     "description": "Una historia que desafía la narración convencional."
   },
   {
@@ -445,7 +445,7 @@ export const bookList =
     "title": "El príncipe",
     "author": "Nicolás Maquiavelo",
     "publisher": "El Ateneo",
-      "coverUrl": "https://www.yenny-elateneo.com/imagenes/9789500_208151_1.jpg",
+      "coverUrl": "https://imgs.search.brave.com/t8mawS1F0AL1BtldpvzUfXdpmA63pSVkfNzN1etpEL0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY2MjEyNy1NTEM3/MTU3MDA5NDgwMF8w/OTIwMjMtVi1saWJy/by1lbC1wcmluY2lw/ZS1uaWNvbGFzLW1h/cXVpYXZlbG8ud2Vi/cA",
     "description": "Un clásico sobre la política y el poder, que ofrece consejos sobre el liderazgo."
   },
   {
@@ -453,7 +453,7 @@ export const bookList =
     "title": "Las fuerzas morales",
     "author": "José Ingenieros",
     "publisher": "America S.R.L.",
-      "coverUrl": "https://imagessl1.casadellibro.com/a/l/t7/31/9788415996331.jpg",
+      "coverUrl": "https://imgs.search.brave.com/_1YxVfWkd4A2ST9LERZ4-VWNALwfPKWDUmH5X9kFWsQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzc0NjIxOC1NTEEz/MjQ1MzY2MTI3OV8x/MDIwMTktVi53ZWJw",
     "description": "Explora los principios éticos y morales que guían la conducta humana."
   },
   {
