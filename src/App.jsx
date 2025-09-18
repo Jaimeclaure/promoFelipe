@@ -5,33 +5,32 @@ import ProfileCard from './components/features/yearbook/ProfileCard';
 import BookLibraryView from './components/features/library/BookLibraryView';
 import BookDetailModal from './components/features/library/BookDetailModal';
 import ControlButton from './components/ui/ControlButton';
+import CreditsModal from './components/features/credits/CreditsModal';
 import logo from './assets/images/promo2000-logo.png';
-import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook, FaInstagram, FaWhatsapp, FaBook } from 'react-icons/fa';
+import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook, FaInstagram, FaWhatsapp, FaBook, FaInfoCircle } from 'react-icons/fa';
 
 import { bookList } from './data/books';
 import { virtualLibraryList } from './data/virtualLibraries';
 
+// ✅ CORRECCIÓN: Se define la lista de videos aquí para asegurar que siempre esté disponible
 const videoList = [
-  { id: 1, name: "Los Años  90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "Donde todo comenzó." },
-    { id: 2, name: "Recreos", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4', quote: "Nuestros mejores momentos." },
-    { id: 3, name: "María René Blacud", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456586/mariareneblacud_c2ysne.mp4', quote: "" },
+    { id: 1, name: "Los Años 90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "" },
+    { id: 2, name: "Recreos", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4', quote: "" },
+    { id: 3, name: "Maria René Blacud", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456586/mariareneblacud_c2ysne.mp4', quote: "" },
     { id: 4, name: "Liseth Bustamante", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757373026/lissethbustamante_ytcmqk.mp4', quote: "" },
     { id: 5, name: "Maria Nelly Castillo", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757609111/marianelacastillo_tjrfks.mp4', quote: "" },
-    { id: 6, name: "Carlos Gómez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456704/carlozgomez_hzi9wj.mp4', quote: "" },    
-    { id: 7, name: "Félix Gutierrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352513/felixgutierrez_hmpzdd.mp4', quote: "" },
+    { id: 6, name: "Carlos Gómez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758231329/carlosgomez_ngsmuz.mov', quote: "" },    
+    { id: 7, name: "Félix Gutiérrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352513/felixgutierrez_hmpzdd.mp4', quote: "" },
     { id: 8, name: "Adriana Narváez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757977534/adriananarvaez_qhnrg8.mp4', quote: "" },
     { id: 9, name: "Miguel Navajas", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4', quote: "" },
-    { id: 10, name: "Andres Pacheco", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456703/andrespacheco_awctsn.mp4', quote: "" },
-    { id: 11, name: "Paul Pelaez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456687/paulpelaez_koz2eb.mp4', quote: "" },
-    { id: 12, name: "Silvia Sanjinez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758043970/silviasanjinez_wvvyvj.mp4', quote: "" },
-    { id: 13, name: "Salma Tórrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757377883/salmatorrez_ay32j9.mp4', quote: "" },
-    { id: 14, name: "Iván Vaca", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4', quote: "" },
-    { id: 15, name: "Nadia Vásquez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758000910/nadiavasquez_bopy70.mp4', quote: "" },
-    { id: 16, name: "Juan Pablo Veizaga", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757368393/juanpabloveizaga_ocei8d.mp4', quote: "" },
-    { id: 17, name: "Mariana Zamora", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4', quote: "" },
+    { id: 10, name: "Paul Peláez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456687/paulpelaez_koz2eb.mp4', quote: "" },
+    { id: 11, name: "Andrés Pacheco", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456703/andrespacheco_awctsn.mp4', quote: "" },
+    { id: 12, name: "Salma Tórrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757377883/salmatorrez_ay32j9.mp4', quote: "" },
+    { id: 13, name: "Iván Vaca", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4', quote: "" },
+    { id: 14, name: "Nadia Vasquez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758000910/nadiavasquez_bopy70.mp4', quote: "" },
+    { id: 15, name: "Juan Pablo Veizaga", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757368393/juanpabloveizaga_ocei8d.mp4', quote: "" },
+    { id: 16, name: "Mariana Zamora", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4', quote: "" },
 ];
-
-
 
 function App() {
   const [mainVideo, setMainVideo] = useState(null);
@@ -39,12 +38,11 @@ function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(null);
   const [isMainVideoPlaying, setIsMainVideoPlaying] = useState(true);
-  
-  // ✅ Estados para la nueva biblioteca de libros
   const [isBookLibraryOpen, setIsBookLibraryOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const [isCreditsOpen, setIsCreditsOpen] = useState(false);
 
-  // Lógica de reproducción de videos (sin cambios)
+  
   const selectNextVideo = useCallback(() => {
     if (videoList.length <= 1) return;
     let nextVideo;
@@ -86,17 +84,8 @@ function App() {
   const closeGallery = () => { setIsGalleryOpen(false); setIsMainVideoPlaying(true); };
   const openProfile = (video) => setActiveProfile(video);
   const closeProfile = () => setActiveProfile(null);
-
-  // ✅ Funciones para abrir y cerrar la biblioteca
-  const openBookLibrary = () => {
-    setIsBookLibraryOpen(true);
-    setIsMainVideoPlaying(false); // Pausamos el video
-  };
-
-  const closeBookLibrary = () => {
-    setIsBookLibraryOpen(false);
-    setIsMainVideoPlaying(true); // Reanudamos el video
-  };
+  const openBookLibrary = () => { setIsBookLibraryOpen(true); setIsMainVideoPlaying(false); };
+  const closeBookLibrary = () => { setIsBookLibraryOpen(false); setIsMainVideoPlaying(true); };
 
   return (
     <>
@@ -116,23 +105,27 @@ function App() {
           <div className="social-icons">
             <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
             <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://wa.me/+59167806989?text=Nos%20interesa%20el%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            <a href="https://wa.me/+59167806989?text=me%20gusta%20tu%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 
         <div className="bottom-ui-container">
           <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>Anuario Digital Interactivo | Promo 2000<br />Celebrando 25 años de Aniversario</p> 
+            <p>Anuario Digital Interactivo | Hno. Felipe Palazón <br />Celebrando el Aniversario de 25 años de la Promo 2000</p> 
           </div>
           <div className="main-controls">
             <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
             <ControlButton onClick={() => setIsMuted(prev => !prev)} ariaLabel="Sonido">{isMuted ? <FaVolumeMute /> : <FaVolumeUp />}</ControlButton>
             <ControlButton onClick={() => handleNavigation('next')} ariaLabel="Siguiente video"><FaForward /></ControlButton>
             <ControlButton onClick={openGallery} ariaLabel="Abrir anuario"><FaBookOpen /></ControlButton>
-            {/* ✅ NUEVO BOTÓN para la biblioteca */}
             <ControlButton onClick={openBookLibrary} ariaLabel="Abrir biblioteca de libros"><FaBook /></ControlButton>
+            <ControlButton onClick={() => setIsCreditsOpen(true)} ariaLabel="Créditos"><FaInfoCircle /></ControlButton>
           </div>
         </div>
+        
+      
+          <FaInfoCircle />
+      
       </div>
       
       {isGalleryOpen && (
@@ -149,8 +142,7 @@ function App() {
         onClose={closeProfile}
         onExpand={handleExpandToMain}
       />
-
-      {/* ✅ renderizados condicionales */}
+      
       {isBookLibraryOpen && (
         <BookLibraryView 
           books={bookList}
@@ -164,6 +156,8 @@ function App() {
         book={selectedBook}
         onClose={() => setSelectedBook(null)}
       />
+
+      {isCreditsOpen && <CreditsModal onClose={() => setIsCreditsOpen(false)} />}
     </>
   );
 }
