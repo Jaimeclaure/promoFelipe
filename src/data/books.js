@@ -141,7 +141,7 @@ export const bookList =
             "title": "Historia de la filosofía Logoi",
             "author": "Jaime Bofill",
             "publisher": "Vicens - Vives",
-            "coverUrl": "https://pictures.abebooks.com/isbn/9788431614912-es.jpg",
+            "coverUrl": "https://images.cdn2.buscalibre.com/fit-in/360x360/6d/9f/6d9f6a6d67925ed76a434e7e139e98c0.jpg",
             "description": "Un recorrido por las grandes corrientes de pensamiento de la filosofía."
         },
         {
@@ -277,7 +277,7 @@ export const bookList =
             "title": "La lozana andaluza",
             "author": "Francisco Delicado",
             "publisher": "Plaza - Janes S.A.",
-            "coverUrl": "https://pictures.abebooks.com/isbn/9788401460371-es.jpg",
+            "coverUrl": "https://imgs.search.brave.com/G1QOr0wxuX9eAqUnpu8aAzz3DB9FMA32Bj3i31LiJKw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzA1/ODQyNTM5OTAuanBn",
             "description": "Una novela que narra las aventuras de una joven andaluza."
         },
         {
@@ -421,7 +421,7 @@ export const bookList =
     "author": "Isabel Mesa",
     "title": "El cuento que nunca se contó",
     "publisher": "Santillana",
-      "coverUrl": "https://imgs.search.brave.com/-E7heukSkUj3xa9lhqYy4cHKCh5ze7ItHq9GekHRFH8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWJsaWouY29tL2Fi/bGlqL3N0b2NrL1Jl/dmlldy8xMTQtaW1h/Z2UvMTE0LWltYWdl/X3dlYi5qcGc_dj0y/MjY2NTg2OTE_dj1m/YjFiYWZkNDJiMmI1/YjBhNTQ3MTkxNTQx/NGMxNGM5Nwg",
+      "coverUrl": "https://www.ablij.com/ablij/stock/Book/511-image/511-image_web.jpg?v=1100982062?v=99a9fbd5dd830a64e8928f7a00353b32",
     "description": "Una historia que desafía la narración convencional."
   },
   {
@@ -461,7 +461,7 @@ export const bookList =
     "title": "El feo",
     "author": "Carlos Cuauhtémoc Sánchez",
     "publisher": "Diamante",
-      "coverUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1445749216l/27315359.jpg",
+      "coverUrl": "https://imgs.search.brave.com/ViBvlV9LZy7l4u9YKmPzTXfdOK5zDj6FceYcYKatOh8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5jZG4xLmJ1c2Nh/bGlicmUuY29tLzYw/ZTM5NGUyODQ2M2I1/ZjMxNThiN2JiMi5f/X1JTMzYweDM2MF9f/LmpwZw",
     "description": "Una novela que desafía los conceptos de belleza y aceptación en la sociedad."
   },
   {
@@ -469,7 +469,7 @@ export const bookList =
     "title": "Las aventuras de colita dorada",
     "author": "Hugo Molina",
     "publisher": "Don Bosco",
-      "coverUrl": "https://placehold.co/300x400/e74c3c/ffffff?text=Colita+Dorada",
+      "coverUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQNZecv9KRTTuoSTYwzeoWrB5NYx3ptGhiYwhIXGDwFfIIvQBxh_-JhZ1vRjHYVCAXZueWSthu3RBW2J7-YCC4K6qrCmkgiFTnahObo9aKiSPBHKNWnEAaNYeTRi_28pLr66cjPg/s400/248_web.jpg",
     "description": "Una emocionante historia infantil llena de aventuras y enseñanzas."
   }
 ];
