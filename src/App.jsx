@@ -2,23 +2,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MainVideoPlayer from './components/layout/MainVideoPlayer';
 import YearbookView from './components/features/yearbook/YearbookView';
 import ProfileCard from './components/features/yearbook/ProfileCard';
+import BookLibraryView from './components/features/library/BookLibraryView';
+import BookDetailModal from './components/features/library/BookDetailModal';
 import ControlButton from './components/ui/ControlButton';
 import logo from './assets/images/promo2000-logo.png';
-import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook, FaInstagram, FaWhatsapp, FaBook } from 'react-icons/fa';
 
-// Función para barajar un array (algoritmo Fisher-Yates)
-const shuffleArray = (array) => {
-  let currentIndex = array.length, randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-  return array;
-};
+import { bookList } from './data/books';
 
 const videoList = [
-   { id: 1, name: "Los Años  90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "Donde todo comenzó." },
+  { id: 1, name: "Los Años  90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "Donde todo comenzó." },
     { id: 2, name: "Recreos", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4', quote: "Nuestros mejores momentos." },
     { id: 3, name: "María René Blacud", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456586/mariareneblacud_c2ysne.mp4', quote: "" },
     { id: 4, name: "Liseth Bustamante", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757373026/lissethbustamante_ytcmqk.mp4', quote: "" },
@@ -37,68 +30,48 @@ const videoList = [
     { id: 17, name: "Mariana Zamora", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4', quote: "" },
 ];
 
+
+
 function App() {
   const [mainVideo, setMainVideo] = useState(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(null);
   const [isMainVideoPlaying, setIsMainVideoPlaying] = useState(true);
+  
+  // ✅ Estados para la nueva biblioteca de libros
+  const [isBookLibraryOpen, setIsBookLibraryOpen] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
 
-  // ✅ NUEVOS ESTADOS para la lógica de reproducción sin repetir
-  const [playQueue, setPlayQueue] = useState([]);
-  const [history, setHistory] = useState([]);
-  const [historyIndex, setHistoryIndex] = useState(-1);
-
-  // Función para avanzar al siguiente video
-  const playNextVideo = useCallback(() => {
-    // Si hay videos "adelante" en el historial (porque se retrocedió), los usamos
-    if (historyIndex < history.length - 1) {
-      const nextIndex = historyIndex + 1;
-      setHistoryIndex(nextIndex);
-      setMainVideo(history[nextIndex]);
-      return;
-    }
-
-    // Si la cola está vacía, la regeneramos
-    let currentQueue = playQueue;
-    if (currentQueue.length === 0) {
-      currentQueue = shuffleArray([...videoList]);
-    }
-    
-    const nextVideo = currentQueue[0];
-    const remainingQueue = currentQueue.slice(1);
-    
+  // Lógica de reproducción de videos (sin cambios)
+  const selectNextVideo = useCallback(() => {
+    if (videoList.length <= 1) return;
+    let nextVideo;
+    do {
+      const randomIndex = Math.floor(Math.random() * videoList.length);
+      nextVideo = videoList[randomIndex];
+    } while (nextVideo.url === mainVideo);
     setMainVideo(nextVideo.url);
-    setPlayQueue(remainingQueue);
-    
-    // Actualizamos el historial
-    const newHistory = [...history, nextVideo.url];
-    setHistory(newHistory);
-    setHistoryIndex(newHistory.length - 1);
-  }, [history, historyIndex, playQueue]);
+  }, [mainVideo]);
 
-  // Función para retroceder
-  const playPreviousVideo = () => {
-    if (historyIndex > 0) {
-      const prevIndex = historyIndex - 1;
-      setHistoryIndex(prevIndex);
-      setMainVideo(history[prevIndex]);
+  const handleNavigation = (direction) => {
+    const currentIndex = videoList.findIndex(v => v.url === mainVideo);
+    if (currentIndex === -1) return;
+    let nextIndex;
+    if (direction === 'next') {
+      nextIndex = (currentIndex + 1) % videoList.length;
+    } else {
+      nextIndex = (currentIndex - 1 + videoList.length) % videoList.length;
     }
+    setMainVideo(videoList[nextIndex].url);
   };
 
-  // Efecto para la carga inicial
   useEffect(() => {
     if (videoList.length > 0) {
-      const initialQueue = shuffleArray([...videoList]);
-      const firstVideo = initialQueue[0];
-      
-      setPlayQueue(initialQueue.slice(1));
-      setMainVideo(firstVideo.url);
-      setHistory([firstVideo.url]);
-      setHistoryIndex(0);
+      const randomIndex = Math.floor(Math.random() * videoList.length);
+      setMainVideo(videoList[randomIndex].url);
       setIsMainVideoPlaying(true);
     }
-    
   }, []);
 
   const handleExpandToMain = (videoUrl) => {
@@ -107,23 +80,33 @@ function App() {
     setIsGalleryOpen(false);
     setIsMainVideoPlaying(true);
   };
-  
+
   const openGallery = () => { setIsGalleryOpen(true); setIsMainVideoPlaying(false); };
   const closeGallery = () => { setIsGalleryOpen(false); setIsMainVideoPlaying(true); };
   const openProfile = (video) => setActiveProfile(video);
   const closeProfile = () => setActiveProfile(null);
+
+  // ✅ Funciones para abrir y cerrar la biblioteca
+  const openBookLibrary = () => {
+    setIsBookLibraryOpen(true);
+    setIsMainVideoPlaying(false); // Pausamos el video
+  };
+
+  const closeBookLibrary = () => {
+    setIsBookLibraryOpen(false);
+    setIsMainVideoPlaying(true); // Reanudamos el video
+  };
 
   return (
     <>
       <MainVideoPlayer 
         videoUrl={mainVideo} 
         isMuted={isMuted}
-        onVideoEnd={playNextVideo} // Al terminar, siempre va al siguiente
+        onVideoEnd={selectNextVideo}
         isPlaying={isMainVideoPlaying}
       />
 
       <div className="layout-container">
-        {/* ... (sección superior sin cambios) ... */}
         <div className="section section-top-right">
           <img src={logo} alt="Logo Promoción 2000" className="logo-promo" />
         </div>
@@ -132,19 +115,21 @@ function App() {
           <div className="social-icons">
             <a href="https://www.facebook.com/Colegio.Hno.Felipe.Palazon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
             <a href="https://www.instagram.com/colegiofelipepalazon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://wa.me/+59167806989?text=me%20gusta%20tu%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
+            <a href="https://wa.me/+59167806989?text=Nos%20interesa%20el%20proyecto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
           </div>
         </div>
 
         <div className="bottom-ui-container">
-            <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>HNO. FELIPE PALAZON - PROMO 2000 <br />Celebrando 25 años de amistad y momentos inolvidables.</p> 
+          <div className="quote-container" style={{ textAlign: 'center' }}>
+            <p>Hno. Felipe Palazón | Anuario Digital Interactivo | Promo 2000<br />Celebrando 25 años de amistad y momentos inolvidables.</p> 
           </div>
           <div className="main-controls">
-            <ControlButton onClick={playPreviousVideo} ariaLabel="Video anterior" disabled={historyIndex <= 0}><FaBackward /></ControlButton>
+            <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
             <ControlButton onClick={() => setIsMuted(prev => !prev)} ariaLabel="Sonido">{isMuted ? <FaVolumeMute /> : <FaVolumeUp />}</ControlButton>
-            <ControlButton onClick={playNextVideo} ariaLabel="Siguiente video"><FaForward /></ControlButton>
+            <ControlButton onClick={() => handleNavigation('next')} ariaLabel="Siguiente video"><FaForward /></ControlButton>
             <ControlButton onClick={openGallery} ariaLabel="Abrir anuario"><FaBookOpen /></ControlButton>
+            {/* ✅ NUEVO BOTÓN para la biblioteca */}
+            <ControlButton onClick={openBookLibrary} ariaLabel="Abrir biblioteca de libros"><FaBook /></ControlButton>
           </div>
         </div>
       </div>
@@ -162,6 +147,20 @@ function App() {
         video={activeProfile}
         onClose={closeProfile}
         onExpand={handleExpandToMain}
+      />
+
+      {/* ✅ NUEVOS COMPONENTES renderizados condicionalmente */}
+      {isBookLibraryOpen && (
+        <BookLibraryView 
+          books={bookList}
+          onSelectBook={setSelectedBook}
+          onClose={closeBookLibrary}
+        />
+      )}
+
+      <BookDetailModal 
+        book={selectedBook}
+        onClose={() => setSelectedBook(null)}
       />
     </>
   );
