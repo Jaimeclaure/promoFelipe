@@ -121,7 +121,7 @@ function App() {
 
         <div className="bottom-ui-container">
           <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>Hno. Felipe Palazón | Anuario Digital Interactivo | Promo 2000<br />Celebrando 25 años de amistad y momentos inolvidables.</p> 
+            <p>Anuario Digital Interactivo | Hno. Felipe Palazón | Promo 2000<br />Celebrando el Aniversario de 25 años de Amistad</p> 
           </div>
           <div className="main-controls">
             <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
