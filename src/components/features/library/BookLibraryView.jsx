@@ -10,7 +10,7 @@ const BookLibraryView = ({ books, virtualLibraries, onSelectBook, onClose }) => 
       
       {/* ✅ NUEVA SUBSECCIÓN DE BIBLIOTECAS VIRTUALES */}
       <div className="virtual-libraries-section">
-        <h3>Bibliotecas Virtuales Recomendadas</h3>
+        <h3>Bibliotecas Virtuales</h3>
         <div className="virtual-libraries-list">
           {virtualLibraries.map((library) => (
             <a 
@@ -28,7 +28,7 @@ const BookLibraryView = ({ books, virtualLibraries, onSelectBook, onClose }) => 
       </div>
 
       <div className="library-header">
-        <h1>Biblioteca de la Promoción</h1>
+        <h1>Biblioteca Física</h1>
         <button className="library-close-button" onClick={onClose}><FaTimes /></button>
       </div>
 

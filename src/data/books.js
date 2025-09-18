@@ -285,7 +285,7 @@ export const bookList =
             "title": "Más allá del invierno",
             "author": "Isabel Allende",
             "publisher": "Penguin Random House",
-            "coverUrl": "https://images.penguinrandomhouse.com/cover/9781984898808",
+            "coverUrl": "https://imgs.search.brave.com/yR2-s9nFMeJN73k354A4gu0--gEgwjPqd4NDeIqgTmM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFUWE1GZkJ1UUwu/anBn",
             "description": "Una novela que trata sobre la lucha y la esperanza en tiempos difíciles."
         },
         {
@@ -325,7 +325,7 @@ export const bookList =
             "title": "Ojos amarillos",
             "author": "Ricardo Mariño",
             "publisher": "Santillana",
-            "coverUrl": "https://www.loqueleo.com/ar/uploads/2016/02/resized/800_9789504645962.jpg",
+            "coverUrl": "https://imgs.search.brave.com/pQhyafAdyteprsNTmRiInlTPx6S4Ty68WqEGOHh6uow/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MzgwNzktTUxBNzU3/MTM0ODkxNzlfMDQy/MDI0LVYud2VicA",
             "description": "Una novela que aborda temas de identidad y pertenencia."
         },
         {
@@ -373,7 +373,7 @@ export const bookList =
             "title": "Aventuras en un pueblo perdido",
             "author": "Rudy Terceros",
             "publisher": "Santillana",
-            "coverUrl": "https://www.ablij.com/uploads/libros/2022-03/aventuras-en-un-pueblo-perdido.jpg",
+            "coverUrl": "https://imgs.search.brave.com/WVHqT38LmS_9zkvgZyfASTFjuhULwn48Z2NQegjhrTc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9xdWVsZW8uY29t/L2JvL3VwbG9hZHMv/MjAyMC8xMC9yZXNp/emVkLzM2MF9hdmVu/dHVyYXMtZW4tdW4t/cHVlYmxvLXBlcmRp/ZG8uanBn",
             "description": "Una emocionante historia de descubrimiento en un pueblo remoto."
         },
         {
