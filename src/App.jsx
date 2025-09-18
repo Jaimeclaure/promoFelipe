@@ -121,7 +121,7 @@ function App() {
 
         <div className="bottom-ui-container">
           <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>Anuario Digital Interactivo | Hno. Felipe Palazón | Promo 2000<br />Celebrando el Aniversario de 25 años de Amistad</p> 
+            <p>Anuario Digital Interactivo | Promo 2000<br />Celebrando 25 años de Aniversario</p> 
           </div>
           <div className="main-controls">
             <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
@@ -149,7 +149,7 @@ function App() {
         onExpand={handleExpandToMain}
       />
 
-      {/* ✅ NUEVOS COMPONENTES renderizados condicionalmente */}
+      {/* ✅ renderizados condicionales */}
       {isBookLibraryOpen && (
         <BookLibraryView 
           books={bookList}

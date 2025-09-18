@@ -69,7 +69,7 @@ export const bookList =
             "title": "Kramer contra Kramer",
             "author": "Avery Corman",
             "publisher": "Oveja Negra",
-            "coverUrl": "https://pictures.abebooks.com/isbn/9788482809068-es.jpg",
+            "coverUrl": "https://imgs.search.brave.com/CzbJ_Y8fR-eE5ydBDqat4M4hw1QJ-wJ30lYEyQPfRPE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFkVzFXUUdoa0wu/anBn",
             "description": "Una conmovedora historia sobre el divorcio y la lucha por la custodia."
         },
         {
@@ -125,7 +125,7 @@ export const bookList =
             "title": "Almanaque mundial 2000",
             "author": "Varios Autores",
             "publisher": "Televisa",
-            "coverUrl": "https://http2.mlstatic.com/D_NQ_NP_722981-MLM47555494149_092021-O.webp",
+            "coverUrl": "https://imgs.search.brave.com/xvz9Y6IA7San5TqZj8ZbMbsmnC6ukJsrjfeeIckPSQg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk4NDI2My1NTE00/OTE4NjIyNjk3Ml8w/MjIwMjItVi1hbG1h/bmFxdWUtbXVuZGlh/bC0yMDAwLWNyb25p/Y2EtZGUtdW4tc2ln/bG8tbGlicm8tMjAw/MC53ZWJw",
             "description": "Un compendio de eventos y datos relevantes del año 2000."
         },
         {
@@ -133,7 +133,7 @@ export const bookList =
             "title": "Almanaque mundial 2002",
             "author": "Varios Autores",
             "publisher": "Televisa",
-            "coverUrl": "https://http2.mlstatic.com/D_NQ_NP_911991-MLM43928811989_102020-O.webp",
+            "coverUrl": "https://imgs.search.brave.com/mym2pQGV6tcvDg42ftqAJRpb6cXX-xX_9Nr5kYVx744/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFQZHVOcTM4MEwu/anBn",
             "description": "Un resumen de los acontecimientos más importantes del año 2002."
         },
         {
@@ -181,7 +181,7 @@ export const bookList =
             "title": "El exorcista",
             "author": "William Peter Blatty",
             "publisher": "Emece Editores S.A.",
-            "coverUrl": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/335/original/portada_el-exorcista_william-peter-blatty_202102121703.jpg",
+            "coverUrl": "https://imgs.search.brave.com/gHSsNXQ7WPcBIZ9PxxI3ivFdWctJOkf2DvOQDEh82iI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF3Mlk5T2kxUEwu/anBn",
             "description": "Una novela de terror que explora la lucha entre el bien y el mal."
         },
         {
@@ -269,7 +269,7 @@ export const bookList =
             "title": "Petróleo",
             "author": "Upton Sinclair",
             "publisher": "Emece Editores S.A.",
-            "coverUrl": "https://i.imgur.com/0uYQZzP.png",
+            "coverUrl": "https://imgs.search.brave.com/zwa4MQ0dD2WaM2NHYb0fJJz69QE1QX-5m4KzxkcvyTY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW5k/dWxvLmNvbS9pbWFn/ZW5lcy85Nzg4NDM1/Lzk3ODg0MzUwMTAy/My5HSUY.gif",
             "description": "Un estudio sobre la importancia y el impacto del petróleo en la economía."
         },
         {
