@@ -111,7 +111,7 @@ function App() {
 
         <div className="bottom-ui-container">
           <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>Anuario Digital Interactivo | Hno. Felipe Palazón <br />Celebrando el Aniversario de 25 años de la Promo 2000</p> 
+            <p>Anuario Digital Interactivo | HFP <br />Aniversario 25 años | Promo 2000</p> 
           </div>
           <div className="main-controls">
             <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
@@ -124,7 +124,7 @@ function App() {
         </div>
         
       
-          <FaInfoCircle />
+         
       
       </div>
       

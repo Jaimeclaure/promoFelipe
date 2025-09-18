@@ -39,7 +39,7 @@ const CreditsModal = ({ onClose }) => {
         <hr />
         
         <p className="tech-stack">
-          Hecho con esmero para el Colegio Hno. Felipe Palazón
+           HECHO CON ESMERO PARA EL COLEGIO HNO. FELIPE PALAZÓN
         </p>
       </div>
     </div>
