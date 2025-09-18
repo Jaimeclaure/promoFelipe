@@ -9,6 +9,7 @@ import logo from './assets/images/promo2000-logo.png';
 import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook, FaInstagram, FaWhatsapp, FaBook } from 'react-icons/fa';
 
 import { bookList } from './data/books';
+import { virtualLibraryList } from './data/virtualLibraries';
 
 const videoList = [
   { id: 1, name: "Los Años  90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "Donde todo comenzó." },
@@ -153,6 +154,7 @@ function App() {
       {isBookLibraryOpen && (
         <BookLibraryView 
           books={bookList}
+          virtualLibraries={virtualLibraryList}
           onSelectBook={setSelectedBook}
           onClose={closeBookLibrary}
         />
