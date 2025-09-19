@@ -12,7 +12,7 @@ import { FaBookOpen, FaVolumeMute, FaVolumeUp, FaForward, FaBackward, FaFacebook
 import { bookList } from './data/books';
 import { virtualLibraryList } from './data/virtualLibraries';
 
-// ✅ CORRECCIÓN: Se define la lista de videos aquí para asegurar que siempre esté disponible
+
 const videoList = [
     { id: 1, name: "Los Años 90s", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756956370/ABRIR_ESTE_ARCHIVO_1_wjpmty.mp4', quote: "" },
     { id: 2, name: "Recreos", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1756958807/promo3_cuumgp.mp4', quote: "" },
@@ -111,7 +111,7 @@ function App() {
 
         <div className="bottom-ui-container">
           <div className="quote-container" style={{ textAlign: 'center' }}>
-            <p>Anuario Digital Interactivo | HFP <br />Aniversario 25 años | Promo 2000</p> 
+            <p>Anuario Digital | Hno. Felipe Palazón<br />Aniversario 25 años | Promo 2000</p> 
           </div>
           <div className="main-controls">
             <ControlButton onClick={() => handleNavigation('prev')} ariaLabel="Video anterior"><FaBackward /></ControlButton>
