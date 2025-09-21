@@ -22,6 +22,7 @@ const videoList = [
     { id: 6, name: "Carlos Gómez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758231329/carlosgomez_ngsmuz.mov', quote: "" },    
     { id: 7, name: "Félix Gutiérrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352513/felixgutierrez_hmpzdd.mp4', quote: "" },
     { id: 8, name: "Adriana Narváez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757977534/adriananarvaez_qhnrg8.mp4', quote: "" },
+    { id: 9, name: "Maria Luisa Mendez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758418249/mayamendez_x0hprv.mp4', quote: "" },
     { id: 9, name: "Miguel Navajas", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4', quote: "" },
     { id: 10, name: "Paul Peláez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456687/paulpelaez_koz2eb.mp4', quote: "" },
     { id: 11, name: "Andrés Pacheco", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456703/andrespacheco_awctsn.mp4', quote: "" },

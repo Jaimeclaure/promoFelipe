@@ -131,7 +131,7 @@ body {
 /* posicion de la barra de reproduccion */
 .bottom-ui-container {
     position: absolute;
-    bottom: 5rem;
+    bottom: 5.5rem;
     left: 2rem;
     right: 2rem;
     display: flex;
@@ -644,6 +644,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
     animation: fadeIn 0.3s ease;
 }
 
@@ -653,7 +655,7 @@ body {
     -webkit-backdrop-filter: blur(20px);
     width: 90%;
     max-width: 500px;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -706,7 +708,7 @@ body {
 
 .credit-item p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
 }
 
