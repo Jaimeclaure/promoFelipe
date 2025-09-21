@@ -23,14 +23,14 @@ const videoList = [
     { id: 7, name: "Félix Gutiérrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352513/felixgutierrez_hmpzdd.mp4', quote: "" },
     { id: 8, name: "Adriana Narváez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757977534/adriananarvaez_qhnrg8.mp4', quote: "" },
     { id: 9, name: "Maria Luisa Mendez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758418249/mayamendez_x0hprv.mp4', quote: "" },
-    { id: 9, name: "Miguel Navajas", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4', quote: "" },
-    { id: 10, name: "Paul Peláez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456687/paulpelaez_koz2eb.mp4', quote: "" },
-    { id: 11, name: "Andrés Pacheco", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456703/andrespacheco_awctsn.mp4', quote: "" },
-    { id: 12, name: "Salma Tórrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757377883/salmatorrez_ay32j9.mp4', quote: "" },
-    { id: 13, name: "Iván Vaca", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4', quote: "" },
-    { id: 14, name: "Nadia Vasquez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758000910/nadiavasquez_bopy70.mp4', quote: "" },
-    { id: 15, name: "Juan Pablo Veizaga", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757368393/juanpabloveizaga_ocei8d.mp4', quote: "" },
-    { id: 16, name: "Mariana Zamora", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4', quote: "" },
+    { id: 10, name: "Miguel Navajas", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352482/mikichonavajas_pwnhz4.mp4', quote: "" },
+    { id: 11, name: "Paul Peláez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456687/paulpelaez_koz2eb.mp4', quote: "" },
+    { id: 12, name: "Andrés Pacheco", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757456703/andrespacheco_awctsn.mp4', quote: "" },
+    { id: 13, name: "Salma Tórrez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757377883/salmatorrez_ay32j9.mp4', quote: "" },
+    { id: 14, name: "Iván Vaca", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757352857/ivanvaca_lh9czb.mp4', quote: "" },
+    { id: 15, name: "Nadia Vasquez", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1758000910/nadiavasquez_bopy70.mp4', quote: "" },
+    { id: 16, name: "Juan Pablo Veizaga", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757368393/juanpabloveizaga_ocei8d.mp4', quote: "" },
+    { id: 17, name: "Mariana Zamora", url: 'https://res.cloudinary.com/dru7b7n4j/video/upload/v1757384933/marianazamora_rfxxam.mp4', quote: "" },
 ];
 
 function App() {
