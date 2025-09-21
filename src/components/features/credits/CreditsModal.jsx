@@ -11,7 +11,7 @@ const CreditsModal = ({ onClose }) => {
         <h3>Créditos del Proyecto</h3>
         
         <p className="intro-text">
-          Este Anuario Digital Interactivo fue desarrollado con dedicación para preservar y celebrar los recuerdos de la Promoción 2000 del Colegio Hno. Felipe Palazón.
+          Este Anuario Digital Interactivo se creó para conmemorar los 25 años de la Promoción 2000 y dar la bienvenida a las nuevas generaciones.
         </p>
         
         <hr />
@@ -36,7 +36,7 @@ const CreditsModal = ({ onClose }) => {
           </div>
         </div>
 
-        {/* ✅ CORRECCIÓN: Se mueve la sección de Colaboradores aquí, fuera y debajo del div anterior */}
+        
         <div className="credit-item collaborators">
           <p><br />
           <h4>Colaboradores</h4> </p>
