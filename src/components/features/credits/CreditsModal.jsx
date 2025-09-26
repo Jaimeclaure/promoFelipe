@@ -42,9 +42,9 @@ const CreditsModal = ({ onClose }) => {
           <h4>Colaboradores</h4> </p>
         
           <p>
-            Lic. Verónica Rocha Zamora<br />
-            Lic. Claudia Molina<br />
             Lic. Paola Orihuela Rosas <br />
+            Lic. Verónica Rocha Zamora<br />
+            Lic. Claudia Molina<br />            
             Lic. Mariana Sueldos<br />            
           </p>
         </div>
@@ -52,7 +52,7 @@ const CreditsModal = ({ onClose }) => {
         <hr />
           <div style={{ textAlign: 'center' }}>
         <p className="tech-stack">
-          HECHO CON ESMERO PARA EL COLEGIO HNO. FELIPE PALAZÓN
+          Agradecimiento especial a la Promo 2000 por su apoyo en este<br/>proyecto hecho con esmero para el Colegio Hno. Felipe Palazón.
         </p>
         <p>
         <img src={escudo} alt="escudo" style={{ maxWidth: '8%', height: 'auto' }}/>
