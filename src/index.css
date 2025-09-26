@@ -131,7 +131,7 @@ body {
 /* posicion de la barra de reproduccion */
 .bottom-ui-container {
     position: absolute;
-    bottom: 5.5rem;
+    bottom: 6rem;
     left: 2rem;
     right: 2rem;
     display: flex;

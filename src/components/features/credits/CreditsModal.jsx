@@ -52,7 +52,7 @@ const CreditsModal = ({ onClose }) => {
         <hr />
           <div style={{ textAlign: 'center' }}>
         <p className="tech-stack">
-          Agradecimiento especial a la Promo 2000 por su apoyo en este<br/>proyecto hecho con esmero para el Colegio Hno. Felipe Palazón.
+          Agradecimiento especial a la Promoción<br/>por su apoyo en este Proyecto hecho<br/>con esmero para el Colegio Hno. Felipe Palazón.
         </p>
         <p>
         <img src={escudo} alt="escudo" style={{ maxWidth: '8%', height: 'auto' }}/>
